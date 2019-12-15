@@ -1,11 +1,16 @@
 const mongoose = require('mongoose');
-const mongoDB = 'mongodb://localhost:27017/dbYakhouyaHotel';
+const mongoDB = "mongodb+srv://yakhouya:yakhouya@yakhouya-aibwq.mongodb.net/test?retryWrites=true&w=majority";
 
-mongoose.connect(mongoDB);
-mongoose.Promise = global.Promise;
-const db = mongoose.connection;
+const connection = async()=>{
+    await mongoose.connect(mongoDB, {
+        useUnifiedTopology: true,
+        useNewUrlParser: true,
+    }).then((res)=>{
+        console.log('Successful connection to the database !')
+    })
+    .catch((err)=>{
+        console.log('Error connecting to mongoDB Atlas.\n' , err)
+    })
+}
+module.exports=connection      
 
-db.on('error',console.error.bind(console, 'Login error to the database'));  
-db.once('open', function(){
-    console.log("Successful connection to the database !")
-})

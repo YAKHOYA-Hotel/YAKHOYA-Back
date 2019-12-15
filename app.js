@@ -1,14 +1,19 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 3030;
 //Déclarer les routes______________________
 const routesHotel= require("./src/compoHotel/routesHotel")
 const routesRoom= require("./src/compoRoom/routesRoom")
 const routesUser= require("./src/compoUser/routesUser")
+const routesReservation= require("./src/compoReservation/routesReservation")
 //_________________________________________
-const dataBase = require('./database');
+const connectDB = require('./database');
+const ficConfigCROS= require("./config_CROS")
 
+app.use(ficConfigCROS.activateCors);
+connectDB()
 // Use routes-----------------------------------------------------------
+app.use('/reservation',routesReservation)
 app.use('/hotel',routesHotel)
 app.use('/room',routesRoom)
 app.use('/user',routesUser)

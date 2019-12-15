@@ -4,20 +4,14 @@ const Schema = mongoose.Schema;
 
 var hotelSchema = new Schema (
     {
-        nameHotel: {type: String, required: true},
+        nameHotel:  {type: String, required: true},
         adressHotel:{type:String, required:true},
-        CPHotel:{type: Number},
-        cityHotel:{type:String},
-        telHotel: {type:String}
+        CPHotel:    {type: String,required: true},
+        cityHotel:  {type:String,required: true},
+        telHotel:   {type:String,required: true}
     }
 );
 
-hotelSchema.virtual('name').get(()=>{
-    return (this.nameHotel);
-})
-
-hotelSchema.virtual('url').get(()=>{
-    return '/hotels'
-})
+hotelSchema.set('collection','Hotels')
 
 module.exports = mongoose.model('Hotel',hotelSchema);
