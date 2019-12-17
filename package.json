@@ -17,10 +17,14 @@
   },
   "homepage": "https://github.com/YAKHOYA-Hotel/YAKHOYA-Back#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.3.5",
-    "mongoose": "^5.7.1"
+    "mongoose": "^5.7.1",
+    "python": "0.0.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
