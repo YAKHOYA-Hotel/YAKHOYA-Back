@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 
 var reservationSchema = new Schema (
     {
-        dateEntre: {type: String, required: true},
-        dateSortie:{type:String, required:true},
+        dateEntre: {type: Date, required: true},
+        dateSortie:{type:Date, required:true},
         idClient:{type: String, required: true},
         idChambre:{type:String, required: true}
     }
