@@ -18,6 +18,9 @@ module.exports = {
                 bcrypt.hash(req.body.password, 5, function (err, bcryptedPassword) 
                 {
                     let newUser = new modelsUser({
+                        name : req.body.name,
+                        lastname : req.body.lastname,
+                        age : req.body.age,
                         email: req.body.email,
                         username: req.body.username,
                         password: bcryptedPassword,
