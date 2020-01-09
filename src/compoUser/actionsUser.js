@@ -38,6 +38,28 @@ module.exports = {
             res.status(400).json(err)
         })
 
+    },
+
+    updateOneUser:(req, res)=>{
+        var id = req.params.id
+        var myUser= new modelsUser({
+            name:req.body.name,
+            lastname:req.body.lastname,
+            age:req.body.age,
+            username:req.body.username,
+            email:req.body.mail,
+            lstReservations: req.body.lstReservations
+        })
+
+        processUser.updateUserProcess(id,myUser)
+        .then((result)=>{
+            res.status(200).json(result)
+        })
+        .catch((errType)=>{
+            if(errType=='Not found user') res.status(404).send(errType)
+            if(errType=='FindOne user methode problem') res.status(400).send(errType)
+            if(errType=='Update user methode problem') res.status(400).send(errType)
+        })
     }
 
 }

@@ -11,7 +11,7 @@ let UserSchema = new mongoose.Schema({
 	password : 	String,
 	email    : 	String,
 	token    : 	String,
-	
+	lstReservations:[],
 });
 //----Export du modele
 let User = mongoose.model('User', UserSchema);

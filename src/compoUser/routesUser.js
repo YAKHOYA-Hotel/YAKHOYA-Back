@@ -10,6 +10,7 @@ router.post('',actionsUser.register);
 router.post('/login',actionsUser.login);
 router.post('/decrypt',actionsUser.decrypt);
 
+router.put('/:id', actionsUser.updateOneUser)
 module.exports= router;
 
 

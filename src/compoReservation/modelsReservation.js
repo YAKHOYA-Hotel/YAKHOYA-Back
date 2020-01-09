@@ -7,7 +7,8 @@ var reservationSchema = new Schema (
         dateEntre: {type: Date, required: true},
         dateSortie:{type:Date, required:true},
         idClient:{type: String, required: true},
-        idChambre:{type:String, required: true}
+        idHotel:{type:String, required: true},
+        typeRoom:{type:String}
     }
 );
 reservationSchema.set('collection','Reservations')

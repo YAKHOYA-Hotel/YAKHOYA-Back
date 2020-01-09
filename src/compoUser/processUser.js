@@ -84,9 +84,32 @@ module.exports = {
             }
             else {
                 resolve(userId);
-            }
+            }ss
         })
-    }
+    },
 
-
+    updateUserProcess:(id,myUser)=>{
+        return new Promise((resolve,reject)=>{
+            modelsUser.findOne({_id: ObjectId(id)},(err, user)=> {
+                if (!user) reject('Not found user')
+                else
+                if (err) reject('FindOne user methode problem')
+                else{
+                    user.name= myUser.name
+                    user.lastname= myUser.lastname
+                    user.age= myUser.age
+                    user.username= myUser.username,
+                    user.email=myUser.email
+                    user.lstReservations=myUser.lstReservations
+                    
+                    user.save((err,user)=>{
+                        if(err){
+                            reject('Update user methode problem')
+                        }
+                        resolve({message:'User Updated !',user})
+                    });  
+                }    
+            });
+        })    
+    },
 }

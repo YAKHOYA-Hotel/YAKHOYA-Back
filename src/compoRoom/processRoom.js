@@ -22,9 +22,9 @@ module.exports={
                     reject(404)
                 } else{
                     if (err){
-                        reject(400)
+                        reject(500)
                     } else{
-                        resolve(JSON.stringify(room))
+                        resolve(room)
                     }
                 }    
             })
@@ -35,12 +35,55 @@ module.exports={
         return new Promise((resolve,reject) => {
             newRoom.save()
             .then((result)=>{
-                resolve('Room Saved !'+ result)    
+                resolve({'Room Saved !': result})    
             })
             .catch((err)=>{
                 reject(500);
             })
         });
+    },
+
+    updateRoomProcess:(id,myRoom)=>{
+        return new Promise((resolve,reject)=>{
+            colRoom.findOne({_id: ObjectId(id)},(err, room)=> {
+                if (!room) reject('Not found room')
+                else
+                if (err) reject('FindOne room methode problem')
+                else{
+                    room.captureRoom= myRoom.captureRoom
+                    room.typeRoom= myRoom.typeRoom
+                    room.lstReservations= myRoom.lstReservations
+                    
+                    room.save((err,room)=>{
+                        if(err){
+                            reject('Update room methode problem')
+                        }
+                        resolve({message:'User Updated !',room})
+                    });  
+                }    
+            });
+        })    
+    },
+
+    processUpdateOneRoom:(id,myRoom)=>{
+        return new Promise((resolve,reject)=>{
+            colRoom.findOne({_id: ObjectId(id)},(err, room)=> {
+                if (!room) reject(404)
+                else
+                if (err) reject(err)
+                else{
+                    room.lstReservations= myRoom.lstReservations
+                    room.captureRoom= myRoom.captureRoom
+                    room.typeRoom= myRoom.typeRoom
+                    room.save((err,roomSaved)=>{
+                        if(err){
+                            reject(err)
+                        }
+                        resolve({message:'Room Updated !',roomSaved})
+                    });  
+                }    
+            });
+        })    
     },
 
     processDeleteOneRoom:(id)=>{

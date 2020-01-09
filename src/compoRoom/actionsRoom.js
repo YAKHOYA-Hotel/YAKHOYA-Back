@@ -6,16 +6,7 @@ module.exports={
     actionShowAllRooms:(req,res)=>{
         processRoom.processShowAllRooms()
         .then((allRooms)=>{
-            getResult(allRooms,req)
-            .then(async(tab)=>{
-                await allRooms.forEach(async element => {
-                    if (element.lstReservations.length==0){
-                        await tab.push(element);
-                    }
-                });
-                res.status(200).send(tab);
-            })
-                        
+            res.status(200).send(allRooms)             
         })
         .catch((err)=>{
             res.status(err).send("There was a problem finding the room.");
@@ -51,7 +42,22 @@ module.exports={
     },  
 
     actionUpdateOneRoom:(req,res)=>{
+        var id = req.params.id
+        let myRoom= new colRoom({
+            captureRoom: req.body.captureRoom,
+            typeRoom:req.body.typeRoom,
+            lstReservations: req.body.lstReservations
+        });
         
+        processRoom.updateRoomProcess(id,myRoom)
+        .then((result)=>{
+            res.status(200).json(result)
+        })
+        .catch((errType)=>{
+            if(errType=='Not found room') res.status(404).send(errType)
+            if(errType=='FindOne room methode problem') res.status(400).send(errType)
+            if(errType=='Update room methode problem') res.status(400).send(errType)
+        })
     },
 
     actionDeleteOneRoom:(req,res)=>{
@@ -66,37 +72,3 @@ module.exports={
     }
 }
 
-function logiqueTest (lstReservations,dateDebut,dateFin){
-    return new Promise((resolve)=>{
-        let datesChauvauchent=false;
-        for(let i=0;i<lstReservations.length;i++){
-            colReservation.findOne({_id: lstReservations[i]})
-            .then((coreReservation)=>{
-                if(!(((dateDebut>coreReservation.dateSortie)&&(dateFin>coreReservation.dateSortie))||((dateFin<coreReservation.dateEntre)&&(dateFin<coreReservation.dateEntre)))){
-                    datesChauvauchent=true;
-                }                    
-            })
-            if(i==lstReservations.length-1){
-                resolve(datesChauvauchent);
-            }
-            
-        }
-    })
-}
-
-function getResult(allRooms,req){
-    let lstRoomsDispo=[];
-    return new Promise(async (resolve)=>{
-        for (let i = 0;i<allRooms.length;i++){
-            logiqueTest(allRooms[i].lstReservations,new Date(req.params.dateDebut),new Date(req.params.dateFin))
-            .then(async (res)=>{
-                if(!res){
-                    await lstRoomsDispo.push(allRooms[i]);
-                }
-                if(i===allRooms.length-1){
-                    await resolve(lstRoomsDispo);
-                }
-            })  
-        }
-    })
-}

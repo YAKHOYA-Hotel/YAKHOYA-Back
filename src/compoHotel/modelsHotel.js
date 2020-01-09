@@ -6,9 +6,13 @@ var hotelSchema = new Schema (
     {
         nameHotel:  {type: String, required: true},
         adressHotel:{type:String, required:true},
-        CPHotel:    {type: String,required: true},
+        CPHotel:    {type: Number,required: true},
         cityHotel:  {type:String,required: true},
-        telHotel:   {type:String,required: true}
+        nbrChambresDoubles: Number,
+        nbrChambresSimple: Number,
+        nbrChambresFamilliales: Number,
+        nbrChambresPresidentilles: Number,
+        lstReservationsHotel:[]
     }
 );
 
