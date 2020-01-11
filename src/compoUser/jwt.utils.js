@@ -7,6 +7,8 @@ module.exports = {
       username: userData.username,
       id: userData.id,
       email:userData.email,
+      name:userData.name,
+      lastname:userData.lastname,
     },
     JWT_SIGN_SECRET,
     {
@@ -19,18 +21,22 @@ module.exports = {
   },
 
   getUserId: function (authorization) {
-    let userId = -1;
+    let userId= -1;
     let token = module.exports.parseAuthorization(authorization);
 
     if (token != null) {
       try {
         let jwtToken = jwt.verify(token, JWT_SIGN_SECRET);
         if (jwtToken != null)
-        console.log(jwtToken)
+          console.log(jwtToken)
           userId = {
+            id:jwtToken.id,
             username: jwtToken.username,
-            email: jwtToken.email
+            email: jwtToken.email,
+            name:jwtToken.name,
+            lastname:jwtToken.lastname
           }
+          
       } catch (err) { }
     }
     return userId;

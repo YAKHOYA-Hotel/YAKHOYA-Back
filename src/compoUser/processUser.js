@@ -78,13 +78,16 @@ module.exports = {
     getuserprofile: (req, res) => {
         return new Promise((resolve, reject) => {
             let headerAuth = req.headers['authorization'];
+            // let tok = req.body.token
             let userId = jwtutils.getUserId(headerAuth);
+            
             if (userId < 0) {
                 reject({ 'Erreur': 'mauvais token' });
             }
             else {
+                console.log(userId)
                 resolve(userId);
-            }ss
+            }
         })
     },
 
