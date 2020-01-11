@@ -1,0 +1,709 @@
+{
+	"info": {
+		"_postman_id": "edced8d3-c847-476d-b192-51e183018d62",
+		"name": "Doc routes Yakhouya Hotel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CompoReservation",
+			"item": [
+				{
+					"name": "Poste one reservation",
+					"item": [
+						{
+							"name": "http://127.0.0.1:3030/reservation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\n{\n    \"dateEntre\":\"2019,12,13\",\n    \"dateSortie\":\"2019,12,13\",\n    \"idClient\":\"5e0ca061c1109f2a34c3f76\",\n    \"idHotel\":\"5e11ec25fdf1405f6c517bf7\",\n    \"typeRoom\":\"Simple\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3030/reservation",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3030",
+									"path": [
+										"reservation"
+									]
+								},
+								"description": "Cette requête nous permet d'ajouter des réservations ainsi que son identifiant à la liste des reservations d'utilisateur en cours."
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Delete one reservation",
+					"item": [
+						{
+							"name": "http://127.0.0.1:3030/reservation/:IdReservation",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3030/reservation/5e13b4807c5dd947fc670e68",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3030",
+									"path": [
+										"reservation",
+										"5e13b4807c5dd947fc670e68"
+									]
+								},
+								"description": "La requête nous permet de supprimer une reservation de la collection des reservations ainsi que la liste des reservations disponible sur un document d'utilisateur"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get all reservations",
+					"item": [
+						{
+							"name": "http://localhost:3030/reservation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3030/reservation",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"reservation"
+									]
+								},
+								"description": "Cette requête nous permet de voir toutes les réservations disponile"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get one reservation",
+					"item": [
+						{
+							"name": "http://localhost:3030/reservation/idReservation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3030/reservation/5e132baca9cc3d2df8ffeaba",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"reservation",
+										"5e132baca9cc3d2df8ffeaba"
+									]
+								},
+								"description": "La requête nous permet de voir la resrvation dont l'identifiant égale à idReservation passé en params "
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "CompoRoom",
+			"item": [
+				{
+					"name": "Get one room",
+					"item": [
+						{
+							"name": "http://127.0.0.1:3030/room/idRoom",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3030/room/5e10c49969a74b0a94f8cbab",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3030",
+									"path": [
+										"room",
+										"5e10c49969a74b0a94f8cbab"
+									]
+								},
+								"description": "Voir une seul chambre dont l'identifiant est égale à idRoom"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get all rooms",
+					"item": [
+						{
+							"name": "http://127.0.0.1:3030/room",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3030/room",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3030",
+									"path": [
+										"room"
+									]
+								},
+								"description": "La requête nous permet de voir toutes les chambres.\n"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Post one room",
+					"item": [
+						{
+							"name": "http://127.0.0.1:3030/room",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"name": "Content-Type",
+										"value": "",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"captureRoom\":\"d1.jpg\",\n    \"typeRoom\":\"double\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3030/room",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3030",
+									"path": [
+										"room"
+									]
+								},
+								"description": "Ajouter une nouvelle chambre "
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Update one room",
+					"item": [
+						{
+							"name": "http://localhost:3030/room/5e10c49969a74b0a94f8cbab",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"captureRoom\": \"d6.png\",\r\n    \"typeRoom\":\"Double\",\r\n\t\"lstReservations\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3030/room/5e10c49969a74b0a94f8cbab",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"room",
+										"5e10c49969a74b0a94f8cbab"
+									]
+								},
+								"description": "Modifier les informations d'une chambre"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "CompoUser",
+			"item": [
+				{
+					"name": "Post one user",
+					"item": [
+						{
+							"name": "http://localhost:3030/user",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbGltMTI1NiIsImVtYWlsIjoic2FsaW0xODA5QGdtYWlsLmNvbSIsImlhdCI6MTU3NjU4OTk3MywiZXhwIjoxNTc2NTkzNTczfQ.vtuHHR1XxRFi11Mnzvn6qsx7VbGzg0-4tTwFC5tSw4E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"name\":\"ZAIDI\",\n\"lastname\":\"Mohand Ameziane\",\n\"age\":24,\n\"username\" : \"Mohand2\",\n\"password\" : \"Mohand2\",\n\"email\" : \"mohand1995@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3030/user?",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"user"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "5ca2685087cf0102f401068a%26key",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Ajouter un nouveau utilisateur"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Login user",
+					"item": [
+						{
+							"name": "http://127.0.0.1:3030/user/login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"password\":\"Mohand2\",\n\t\"username\":\"Mohand2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3030/user/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3030",
+									"path": [
+										"user",
+										"login"
+									]
+								},
+								"description": "Route permet d'avoir le token et le renvoyer au back pour avoir les autres informations d'utilisateur."
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Dycript token",
+					"item": [
+						{
+							"name": "http://127.0.0.1:3030/user/decrypt",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1vaGFuZDIiLCJlbWFpbCI6Im1vaGFuZDE5OTVAZ21haWwuY29tIiwiaWF0IjoxNTc4NDM4Mzk3LCJleHAiOjE1Nzg0NDE5OTd9.9Rsv9-rSzsf5gGdoyiTtCqJacpAgiYI8Px3gwJ-8xwg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3030/user/decrypt",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3030",
+									"path": [
+										"user",
+										"decrypt"
+									]
+								},
+								"description": "Décripter le token et avoir toutes les infos sur le user"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Update one user",
+					"item": [
+						{
+							"name": "http://127.0.0.1:3030/user/IdUser",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"ZAIDI\",\n    \"lastname\":\"Bezza\",\n    \"age\":24,\n    \"username\":\"Momoh\",\n    \"mail\":\"momoh@gmail.com\",\n    \"lstReservations\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3030/user/5e150c0bba17025774cd8cd8",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3030",
+									"path": [
+										"user",
+										"5e150c0bba17025774cd8cd8"
+									]
+								},
+								"description": "Modifier les informations d'un utilisateur."
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "CompoHotel",
+			"item": [
+				{
+					"name": "Post one hotel",
+					"item": [
+						{
+							"name": "http://127.0.0.1:3030/hotel",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nameHotel\":\"Yakhouya Hotel 1\",\n\t\"adressHotel\":\"01 rue mémdéric\",\n\t\"CPHotel\":94600,\n\t\"cityHotel\":\"Choisy\",\n\t\"nbrChambresDoubles\":7,\n\t\"nbrChambresSimple\":25,\n\t\"nbrChambresFamilliales\":4,\n\t\"nbrChambresPresidentilles\":1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3030/hotel",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3030",
+									"path": [
+										"hotel"
+									]
+								},
+								"description": "Ajouter un nouveau hôtel"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Show all hotels",
+					"item": [
+						{
+							"name": "http://127.0.0.1:3030/hotel",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3030/hotel",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3030",
+									"path": [
+										"hotel"
+									]
+								},
+								"description": "Voir tous les hôtels"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Show one hotel",
+					"item": [
+						{
+							"name": "http://127.0.0.1:3030/hotel/5e11ec25fdf1405f6c517bf7",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3030/hotel/5e11ec25fdf1405f6c517bf7",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3030",
+									"path": [
+										"hotel",
+										"5e11ec25fdf1405f6c517bf7"
+									]
+								},
+								"description": "Voir un seul hôtel\t"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Update one hotel",
+					"item": [
+						{
+							"name": "http://127.0.0.1:3030/hotel/IdHotel",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nameHotel\": \"Yakhouya Hotel 2\",\r\n    \"adressHotel\":\"01 rue Matoub\",\r\n    \"CPHotel\":\"75000\",\r\n    \"cityHotel\":\"Paris\",\r\n    \"nbrChambresDoubles\":20,\r\n    \"nbrChambresSimple\":50,\r\n    \"nbrChambresFamilliales\":30,\r\n    \"nbrChambresPresidentilles\":10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3030/hotel/5e11ec25fdf1405f6c517bf7",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3030",
+									"path": [
+										"hotel",
+										"5e11ec25fdf1405f6c517bf7"
+									]
+								},
+								"description": "Modifier un seul hôtel"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Delete one hotel",
+					"item": [
+						{
+							"name": "http://127.0.0.1:3030/hotel/IdHotel",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3030/hotel/5e11ec25fdf1405f6c517bf7",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3030",
+									"path": [
+										"hotel",
+										"5e11ec25fdf1405f6c517bf7"
+									]
+								},
+								"description": "Supprimer un hôtel"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
