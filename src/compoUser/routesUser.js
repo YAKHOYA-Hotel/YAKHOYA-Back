@@ -1,14 +1,18 @@
-const express= require("express")
-const router = express.Router()
+const router = require('express').Router();
 const bodyParser= require("body-parser")
 
-router.use(bodyParser.urlencoded({extended:true}))
-router.use(bodyParser.json)
+router.use(bodyParser.json());
+const actionsUser = require('./actionsUser');
 
-router.get("/showallusers")
-router.get("/showoneuser")
-router.post("/postoneuser")
-router.put("/putoneuser/:idUser")
-router.delete("/deleteoneuser/:idUser")
 
+router.post('',actionsUser.register); 
+
+router.post('/login',actionsUser.login);
+router.post('/decrypt',actionsUser.decrypt);
+
+router.put('/:id', actionsUser.updateOneUser)
 module.exports= router;
+
+
+
+
