@@ -42,7 +42,7 @@ module.exports={
 
     callbackShowUser:(id)=>{
         return new Promise((resolve,reject)=>{
-            modelsUser.findOne({_id: id},(err, user)=> {
+            modelsUser.findOne({username: id},(err, user)=> {
                 if (!user){
                     reject('Not found user')
                 } else{
@@ -135,22 +135,22 @@ module.exports={
     }, 
 
     callbackFindHotel:(idHotel,typeRoom)=>{
-        console.log(typeRoom)
+        // console.log(typeRoom)
         return new Promise((resolve,reject)=>{
-            colHotel.findOne({_id: idHotel},(err, hotel)=> {
+            colHotel.findOne({nameHotel: idHotel},(err, hotel)=> {
                 if (!hotel){
                     reject('Not found hotel')
                 } else {
                     if (err){
                         reject('FindOne hotel methode problem')
                     }else{
-                        if (typeRoom=="Simple"){
+                        if (typeRoom.toLowerCase()=="simple"){
                             resolve(hotel.nbrChambresSimple)
                         }else{
-                            if(typeRoom=="Double"){
+                            if(typeRoom.toLowerCase()=="double"){
                                 resolve(hotel.nbrChambresDoubles)
                             }else{
-                                if(typeRoom=="Familiale"){
+                                if(typeRoom.toLowerCase()=="familiale"){
                                     resolve(hotel.nbrChambresFamilliales)
                                 }else{
                                     resolve(hotel.nbrChambresPresidentilles)

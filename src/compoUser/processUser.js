@@ -6,9 +6,38 @@ const jwtutils = require('./jwt.utils');
 const modelsUser = require('./modelsUser');
 const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const PASSWORD_REGEX = /^(?=.*\d).{4,8}$/;
-
+const utilsUsers= require('./utilsUsers')
 //----Routera
 module.exports = {
+
+    processShowAllReservationsUser:(username)=>{
+        return new Promise((reject,resolve)=>{
+            modelsUser.findOne({username: ObjectId(username)},(err, user)=> {
+                if (!user){
+                    reject('Not found user')
+                } 
+                else{
+                    if(err) {
+                        reject('FindOne user methode problem')
+                    }else{
+                        let lstres=[];
+                        user.lstReservations.forEach(element => {
+                            utilsUsers.processShowOneReservation(element)
+                            .then((res)=>{
+                                lstres.push(res)
+                            })
+                            .catch((error)=>{
+                                reject(error)
+                            });
+                        });
+                        resolve(lstres)
+                    }
+                }
+                    
+            });
+        })
+        
+    },
 
     // s'enregistrer
     register: (req, res) => {
@@ -93,7 +122,7 @@ module.exports = {
 
     updateUserProcess:(id,myUser)=>{
         return new Promise((resolve,reject)=>{
-            modelsUser.findOne({_id: ObjectId(id)},(err, user)=> {
+            modelsUser.findOne({username: id},(err, user)=> {
                 if (!user) reject('Not found user')
                 else
                 if (err) reject('FindOne user methode problem')

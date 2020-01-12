@@ -4,7 +4,7 @@ const bodyParser= require("body-parser")
 router.use(bodyParser.json());
 const actionsUser = require('./actionsUser');
 
-
+router.get('/:username',actionsUser.actionShowAllReservationsUser)
 router.post('',actionsUser.register); 
 
 router.post('/login',actionsUser.login);
