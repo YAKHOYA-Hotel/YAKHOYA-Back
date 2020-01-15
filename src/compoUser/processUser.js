@@ -12,7 +12,7 @@ module.exports = {
 
     processShowAllReservationsUser:(username)=>{
         return new Promise((reject,resolve)=>{
-            modelsUser.findOne({username: ObjectId(username)},(err, user)=> {
+            modelsUser.findOne({username: username},(err, user)=> {
                 if (!user){
                     reject('Not found user')
                 } 
@@ -20,17 +20,7 @@ module.exports = {
                     if(err) {
                         reject('FindOne user methode problem')
                     }else{
-                        let lstres=[];
-                        user.lstReservations.forEach(element => {
-                            utilsUsers.processShowOneReservation(element)
-                            .then((res)=>{
-                                lstres.push(res)
-                            })
-                            .catch((error)=>{
-                                reject(error)
-                            });
-                        });
-                        resolve(lstres)
+                        resolve({"Liste de reservations": user.lstReservations, "user informations":user})
                     }
                 }
                     

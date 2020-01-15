@@ -52,7 +52,7 @@ module.exports={
                             utilsReservation.callbackShowUser(idUser)
                             .then((user)=>{
                                 let tabResInUser=user.lstReservations
-                                tabResInUser.push(result._id)
+                                tabResInUser.push(result)
                                 let myUser=new modelsUser({
                                     name:user.name,
                                     lastname:user.lastname,

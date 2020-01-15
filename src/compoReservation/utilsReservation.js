@@ -83,7 +83,10 @@ module.exports={
 
     callbackShowAndUpdateUser:(reservation)=>{
         return new Promise((resolve,reject)=>{
-            modelsUser.findOne({_id: reservation.idClient},(err, user)=> {
+            // console.log(`${reservation.idClient} == ${reservation}`)
+            console.log(reservation)
+
+            modelsUser.findOne({username: reservation.idClient},(err, user)=> {
                 if (!user){
                     reject('Not found user')
                 } else{
@@ -91,7 +94,7 @@ module.exports={
                         reject('FindOne User methode problem')
                     } else{               
                         let tabReservationsUser =user.lstReservations
-                        tabReservationsUser.splice(tabReservationsUser.indexOf(reservation._id),1)
+                        tabReservationsUser.splice(tabReservationsUser.indexOf(reservation),1)
                         let myUser=new modelsUser({
                             name:user.name,
                             lastname:user.lastname,
@@ -100,8 +103,9 @@ module.exports={
                             email:user.email,
                             lstReservations:tabReservationsUser
                         })
-
-                        processUser.updateUserProcess(user._id,myUser)
+                        console.log(user._id)
+                        
+                        processUser.updateUserProcess(user.username,myUser)
                         .then((res)=>{
                             resolve({"User modified ":res})
                         })
