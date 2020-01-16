@@ -3,6 +3,18 @@ const modelsUser = require('./modelsUser');
 
 module.exports = {
 
+    actionShowAllReservationsUser:(req,res)=>{
+        username=req.params.username
+        processUser.processShowAllReservationsUser(username)
+        .then((tabReservation)=>{
+            console.log(tabReservation)
+            res.status(200).send(tabReservation)
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+    },
+    
     register(req, res, body) {
         processUser.register(req, res, body)
         .then((result) => {

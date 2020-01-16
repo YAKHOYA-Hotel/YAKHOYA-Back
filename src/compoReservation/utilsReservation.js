@@ -42,7 +42,7 @@ module.exports={
 
     callbackShowUser:(id)=>{
         return new Promise((resolve,reject)=>{
-            modelsUser.findOne({_id: id},(err, user)=> {
+            modelsUser.findOne({username: id},(err, user)=> {
                 if (!user){
                     reject('Not found user')
                 } else{
@@ -83,7 +83,10 @@ module.exports={
 
     callbackShowAndUpdateUser:(reservation)=>{
         return new Promise((resolve,reject)=>{
-            modelsUser.findOne({_id: reservation.idClient},(err, user)=> {
+            // console.log(`${reservation.idClient} == ${reservation}`)
+            console.log(reservation)
+
+            modelsUser.findOne({username: reservation.idClient},(err, user)=> {
                 if (!user){
                     reject('Not found user')
                 } else{
@@ -91,7 +94,7 @@ module.exports={
                         reject('FindOne User methode problem')
                     } else{               
                         let tabReservationsUser =user.lstReservations
-                        tabReservationsUser.splice(tabReservationsUser.indexOf(reservation._id),1)
+                        tabReservationsUser.splice(tabReservationsUser.indexOf(reservation),1)
                         let myUser=new modelsUser({
                             name:user.name,
                             lastname:user.lastname,
@@ -100,8 +103,9 @@ module.exports={
                             email:user.email,
                             lstReservations:tabReservationsUser
                         })
-
-                        processUser.updateUserProcess(user._id,myUser)
+                        console.log(user._id)
+                        
+                        processUser.updateUserProcess(user.username,myUser)
                         .then((res)=>{
                             resolve({"User modified ":res})
                         })
@@ -135,22 +139,22 @@ module.exports={
     }, 
 
     callbackFindHotel:(idHotel,typeRoom)=>{
-        console.log(typeRoom)
+        // console.log(typeRoom)
         return new Promise((resolve,reject)=>{
-            colHotel.findOne({_id: idHotel},(err, hotel)=> {
+            colHotel.findOne({nameHotel: idHotel},(err, hotel)=> {
                 if (!hotel){
                     reject('Not found hotel')
                 } else {
                     if (err){
                         reject('FindOne hotel methode problem')
                     }else{
-                        if (typeRoom=="Simple"){
+                        if (typeRoom.toLowerCase()=="simple"){
                             resolve(hotel.nbrChambresSimple)
                         }else{
-                            if(typeRoom=="Double"){
+                            if(typeRoom.toLowerCase()=="double"){
                                 resolve(hotel.nbrChambresDoubles)
                             }else{
-                                if(typeRoom=="Familiale"){
+                                if(typeRoom.toLowerCase()=="familiale"){
                                     resolve(hotel.nbrChambresFamilliales)
                                 }else{
                                     resolve(hotel.nbrChambresPresidentilles)
