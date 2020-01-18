@@ -12,20 +12,20 @@
 					"name": "Poste one reservation",
 					"item": [
 						{
-							"name": "http://127.0.0.1:3030/reservation",
+							"name": "http://yakhouya-app.herokuapp.com/reservation",
 							"request": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
 										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"type": "text",
+										"value": "application/json"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "\n{\n    \"dateEntre\":\"2019,12,13\",\n    \"dateSortie\":\"2019,12,13\",\n    \"idClient\":\"5e0ca061c1109f2a34c3f76\",\n    \"idHotel\":\"5e11ec25fdf1405f6c517bf7\",\n    \"typeRoom\":\"Simple\"\n}\n",
+									"raw": "\n{\n    \"dateEntre\":\"2020,12,19\",\n    \"dateSortie\":\"2020,12,20\",\n    \"idClient\":\"Mehdi1\",\n    \"idHotel\":\"Ares-Eiffel\",\n    \"typeRoom\":\"Simple\"\n}\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -33,15 +33,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:3030/reservation",
+									"raw": "http://yakhouya-app.herokuapp.com/reservation",
 									"protocol": "http",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"yakhouya-app",
+										"herokuapp",
+										"com"
 									],
-									"port": "3030",
 									"path": [
 										"reservation"
 									]
@@ -58,23 +56,21 @@
 					"name": "Delete one reservation",
 					"item": [
 						{
-							"name": "http://127.0.0.1:3030/reservation/:IdReservation",
+							"name": "http://yakhouya-app.herokuapp.com/reservation/:IdReservation",
 							"request": {
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://127.0.0.1:3030/reservation/5e13b4807c5dd947fc670e68",
+									"raw": "http://yakhouya-app.herokuapp.com/reservation/5e1d714c10c996286c0b11a7",
 									"protocol": "http",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"yakhouya-app",
+										"herokuapp",
+										"com"
 									],
-									"port": "3030",
 									"path": [
 										"reservation",
-										"5e13b4807c5dd947fc670e68"
+										"5e1d714c10c996286c0b11a7"
 									]
 								},
 								"description": "La requête nous permet de supprimer une reservation de la collection des reservations ainsi que la liste des reservations disponible sur un document d'utilisateur"
@@ -89,17 +85,18 @@
 					"name": "Get all reservations",
 					"item": [
 						{
-							"name": "http://localhost:3030/reservation",
+							"name": "http://yakhouya-app.herokuapp.com/reservation",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3030/reservation",
+									"raw": "http://yakhouya-app.herokuapp.com/reservation",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"yakhouya-app",
+										"herokuapp",
+										"com"
 									],
-									"port": "3030",
 									"path": [
 										"reservation"
 									]
@@ -116,20 +113,21 @@
 					"name": "Get one reservation",
 					"item": [
 						{
-							"name": "http://localhost:3030/reservation/idReservation",
+							"name": "http://yakhouya-app.herokuapp.com/reservation/:IdReservation",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3030/reservation/5e132baca9cc3d2df8ffeaba",
+									"raw": "http://yakhouya-app.herokuapp.com/reservation/5e1d717410c996286c0b11a9",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"yakhouya-app",
+										"herokuapp",
+										"com"
 									],
-									"port": "3030",
 									"path": [
 										"reservation",
-										"5e132baca9cc3d2df8ffeaba"
+										"5e1d717410c996286c0b11a9"
 									]
 								},
 								"description": "La requête nous permet de voir la resrvation dont l'identifiant égale à idReservation passé en params "
@@ -150,20 +148,18 @@
 					"name": "Get one room",
 					"item": [
 						{
-							"name": "http://127.0.0.1:3030/room/idRoom",
+							"name": "http://yakhouya-app.herokuapp.com/room/:IdRoom",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://127.0.0.1:3030/room/5e10c49969a74b0a94f8cbab",
+									"raw": "http://yakhouya-app.herokuapp.com/room/5e10c49969a74b0a94f8cbab",
 									"protocol": "http",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"yakhouya-app",
+										"herokuapp",
+										"com"
 									],
-									"port": "3030",
 									"path": [
 										"room",
 										"5e10c49969a74b0a94f8cbab"
@@ -181,20 +177,18 @@
 					"name": "Get all rooms",
 					"item": [
 						{
-							"name": "http://127.0.0.1:3030/room",
+							"name": "http://yakhouya-app.herokuapp.com/room",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://127.0.0.1:3030/room",
+									"raw": "http://yakhouya-app.herokuapp.com/room",
 									"protocol": "http",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"yakhouya-app",
+										"herokuapp",
+										"com"
 									],
-									"port": "3030",
 									"path": [
 										"room"
 									]
@@ -211,7 +205,7 @@
 					"name": "Post one room",
 					"item": [
 						{
-							"name": "http://127.0.0.1:3030/room",
+							"name": "http://yakhouya-app.herokuapp.com/room",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -230,7 +224,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"captureRoom\":\"d1.jpg\",\n    \"typeRoom\":\"double\"\n}",
+									"raw": "{\n    \"captureRoom\":\"d6.jpg\",\n    \"typeRoom\":\"double\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -238,15 +232,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:3030/room",
+									"raw": "http://yakhouya-app.herokuapp.com/room",
 									"protocol": "http",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"yakhouya-app",
+										"herokuapp",
+										"com"
 									],
-									"port": "3030",
 									"path": [
 										"room"
 									]
@@ -263,7 +255,7 @@
 					"name": "Update one room",
 					"item": [
 						{
-							"name": "http://localhost:3030/room/5e10c49969a74b0a94f8cbab",
+							"name": "http://yakhouya-app.herokuapp.com/room/:IdRoom",
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -276,7 +268,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"captureRoom\": \"d6.png\",\r\n    \"typeRoom\":\"Double\",\r\n\t\"lstReservations\": []\r\n}",
+									"raw": "{\r\n    \"captureRoom\": \"d5.png\",\r\n    \"typeRoom\":\"Double\",\r\n\t\"lstReservations\": []\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -284,12 +276,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3030/room/5e10c49969a74b0a94f8cbab",
+									"raw": "http://yakhouya-app.herokuapp.com/room/5e10c49969a74b0a94f8cbab",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"yakhouya-app",
+										"herokuapp",
+										"com"
 									],
-									"port": "3030",
 									"path": [
 										"room",
 										"5e10c49969a74b0a94f8cbab"
@@ -313,7 +306,7 @@
 					"name": "Post one user",
 					"item": [
 						{
-							"name": "http://localhost:3030/user",
+							"name": "http://yakhouya-app.herokuapp.com/user",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -331,7 +324,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\"name\":\"ZAIDI\",\n\"lastname\":\"Mohand Ameziane\",\n\"age\":24,\n\"username\" : \"Mohand2\",\n\"password\" : \"Mohand2\",\n\"email\" : \"mohand1995@gmail.com\"\n}",
+									"raw": "{\n\"name\":\"ZAIDI\",\n\"lastname\":\"Mohand Ameziane\",\n\"age\":24,\n\"username\" : \"Mohand4\",\n\"password\" : \"Mohand4\",\n\"email\" : \"mohand19953@gmail.com\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -339,12 +332,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3030/user?",
+									"raw": "http://yakhouya-app.herokuapp.com/user?",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"yakhouya-app",
+										"herokuapp",
+										"com"
 									],
-									"port": "3030",
 									"path": [
 										"user"
 									],
@@ -368,7 +362,7 @@
 					"name": "Login user",
 					"item": [
 						{
-							"name": "http://127.0.0.1:3030/user/login",
+							"name": "http://yakhouya-app.herokuapp.com/user/login",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -381,7 +375,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"password\":\"Mohand2\",\n\t\"username\":\"Mohand2\"\n}",
+									"raw": "{\n\t\"password\":\"Mehdi1\",\n\t\"username\":\"Mehdi1\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -389,15 +383,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:3030/user/login",
+									"raw": "http://yakhouya-app.herokuapp.com/user/login",
 									"protocol": "http",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"yakhouya-app",
+										"herokuapp",
+										"com"
 									],
-									"port": "3030",
 									"path": [
 										"user",
 										"login"
@@ -415,7 +407,7 @@
 					"name": "Dycript token",
 					"item": [
 						{
-							"name": "http://127.0.0.1:3030/user/decrypt",
+							"name": "http://yakhouya-app.herokuapp.com/user/decrypt",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -427,7 +419,7 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1vaGFuZDIiLCJlbWFpbCI6Im1vaGFuZDE5OTVAZ21haWwuY29tIiwiaWF0IjoxNTc4NDM4Mzk3LCJleHAiOjE1Nzg0NDE5OTd9.9Rsv9-rSzsf5gGdoyiTtCqJacpAgiYI8Px3gwJ-8xwg",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1laGRpMSIsImVtYWlsIjoibWVoZGlAZ21haWwuY29tIiwibmFtZSI6IlpBSURJIiwibGFzdG5hbWUiOiJNZWhkaSIsImlhdCI6MTU3OTM2OTg2NSwiZXhwIjoxNTc5MzczNDY1fQ.bF_o-PY_R__9PCVHZV1wuqJpejhZd0h5P7UKf_X_CvE",
 										"type": "text"
 									}
 								],
@@ -441,15 +433,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:3030/user/decrypt",
+									"raw": "http://yakhouya-app.herokuapp.com/user/decrypt",
 									"protocol": "http",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"yakhouya-app",
+										"herokuapp",
+										"com"
 									],
-									"port": "3030",
 									"path": [
 										"user",
 										"decrypt"
@@ -467,7 +457,7 @@
 					"name": "Update one user",
 					"item": [
 						{
-							"name": "http://127.0.0.1:3030/user/IdUser",
+							"name": "http://yakhouya-app.herokuapp.com/user/IdUser",
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -480,7 +470,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\":\"ZAIDI\",\n    \"lastname\":\"Bezza\",\n    \"age\":24,\n    \"username\":\"Momoh\",\n    \"mail\":\"momoh@gmail.com\",\n    \"lstReservations\": []\n}",
+									"raw": "{\n    \"name\":\"ZAIDI\",\n    \"lastname\":\"Bezza\",\n    \"age\":11,\n    \"username\":\"Momoh\",\n    \"mail\":\"momoh@gmail.com\",\n    \"lstReservations\": []\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -488,21 +478,48 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:3030/user/5e150c0bba17025774cd8cd8",
+									"raw": "http://yakhouya-app.herokuapp.com/user/Mohand4",
 									"protocol": "http",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"yakhouya-app",
+										"herokuapp",
+										"com"
 									],
-									"port": "3030",
 									"path": [
 										"user",
-										"5e150c0bba17025774cd8cd8"
+										"Mohand4"
 									]
 								},
 								"description": "Modifier les informations d'un utilisateur."
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Show all reservations of user",
+					"item": [
+						{
+							"name": "http://yakhouya-app.herokuapp.com/user/PseudoUnique",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://yakhouya-app.herokuapp.com/user/Larbi1",
+									"protocol": "http",
+									"host": [
+										"yakhouya-app",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"user",
+										"Larbi1"
+									]
+								},
+								"description": "Voir toutes les réservations du client"
 							},
 							"response": []
 						}
@@ -520,7 +537,7 @@
 					"name": "Post one hotel",
 					"item": [
 						{
-							"name": "http://127.0.0.1:3030/hotel",
+							"name": "http://yakhouya-app.herokuapp.com/hotel",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -533,7 +550,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"nameHotel\":\"Yakhouya Hotel 1\",\n\t\"adressHotel\":\"01 rue mémdéric\",\n\t\"CPHotel\":94600,\n\t\"cityHotel\":\"Choisy\",\n\t\"nbrChambresDoubles\":7,\n\t\"nbrChambresSimple\":25,\n\t\"nbrChambresFamilliales\":4,\n\t\"nbrChambresPresidentilles\":1\n}",
+									"raw": "{\n\t\"nameHotel\":\"Test hotel\",\n\t\"adressHotel\":\"Test adr\",\n\t\"CPHotel\":94600,\n\t\"cityHotel\":\"Choisy\",\n\t\"nbrChambresDoubles\":6,\n\t\"nbrChambresSimple\":12,\n\t\"nbrChambresFamilliales\":2,\n\t\"nbrChambresPresidentilles\":3\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -541,15 +558,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:3030/hotel",
+									"raw": "http://yakhouya-app.herokuapp.com/hotel",
 									"protocol": "http",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"yakhouya-app",
+										"herokuapp",
+										"com"
 									],
-									"port": "3030",
 									"path": [
 										"hotel"
 									]
@@ -566,20 +581,18 @@
 					"name": "Show all hotels",
 					"item": [
 						{
-							"name": "http://127.0.0.1:3030/hotel",
+							"name": "http://yakhouya-app.herokuapp.com/hotel",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://127.0.0.1:3030/hotel",
+									"raw": "http://yakhouya-app.herokuapp.com/hotel",
 									"protocol": "http",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"yakhouya-app",
+										"herokuapp",
+										"com"
 									],
-									"port": "3030",
 									"path": [
 										"hotel"
 									]
@@ -596,23 +609,21 @@
 					"name": "Show one hotel",
 					"item": [
 						{
-							"name": "http://127.0.0.1:3030/hotel/5e11ec25fdf1405f6c517bf7",
+							"name": "http://yakhouya-app.herokuapp.com/hotel/:idHotel",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://127.0.0.1:3030/hotel/5e11ec25fdf1405f6c517bf7",
+									"raw": "http://yakhouya-app.herokuapp.com/hotel/5e165af46e7d5b4f44925899",
 									"protocol": "http",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"yakhouya-app",
+										"herokuapp",
+										"com"
 									],
-									"port": "3030",
 									"path": [
 										"hotel",
-										"5e11ec25fdf1405f6c517bf7"
+										"5e165af46e7d5b4f44925899"
 									]
 								},
 								"description": "Voir un seul hôtel\t"
@@ -627,7 +638,7 @@
 					"name": "Update one hotel",
 					"item": [
 						{
-							"name": "http://127.0.0.1:3030/hotel/IdHotel",
+							"name": "http://yakhouya-app.herokuapp.com/hotel/:IdHotel",
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -648,18 +659,16 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:3030/hotel/5e11ec25fdf1405f6c517bf7",
+									"raw": "http://yakhouya-app.herokuapp.com/hotel/5e165af46e7d5b4f44925899",
 									"protocol": "http",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"yakhouya-app",
+										"herokuapp",
+										"com"
 									],
-									"port": "3030",
 									"path": [
 										"hotel",
-										"5e11ec25fdf1405f6c517bf7"
+										"5e165af46e7d5b4f44925899"
 									]
 								},
 								"description": "Modifier un seul hôtel"
@@ -674,20 +683,18 @@
 					"name": "Delete one hotel",
 					"item": [
 						{
-							"name": "http://127.0.0.1:3030/hotel/IdHotel",
+							"name": "http://yakhouya-app.herokuapp.com/hotel/IdHotel",
 							"request": {
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://127.0.0.1:3030/hotel/5e11ec25fdf1405f6c517bf7",
+									"raw": "http://yakhouya-app.herokuapp.com/hotel/5e11ec25fdf1405f6c517bf7",
 									"protocol": "http",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"yakhouya-app",
+										"herokuapp",
+										"com"
 									],
-									"port": "3030",
 									"path": [
 										"hotel",
 										"5e11ec25fdf1405f6c517bf7"
