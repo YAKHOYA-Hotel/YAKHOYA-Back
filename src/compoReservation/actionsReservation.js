@@ -24,27 +24,30 @@ module.exports={
     },
 
     actionPostOneReservation:(req,res)=>{
-        
-        let myReservation= new colReservation({
-            dateEntre:new Date(req.body.dateEntre),
-            dateSortie:new Date(req.body.dateSortie),
-            idClient:req.body.idClient,
-            idHotel:req.body.idHotel,
-            typeRoom:req.body.typeRoom
-        });
-        processReservation.processAddOneReservation(myReservation,req.body.idClient,req.body.idHotel)
-        .then((result)=>{
-            res.status(200).send(result)
-        })
-        .catch((err)=>{
-            if(err=="Find reservations methode problem"){ res.status(400).send(err) }
-            if(err=="Not found hotel"){ res.status(404).send(err) }
-            if(err=="FindOne hotel methode problem"){ res.status(400).send(err) }
-            if(err=="Not found user"){ res.status(404).send(err) }
-            if(err=="Find one user methode problem"){ res.status(400).send(err) }
-            if(err=="FindOne user methode problem"){ res.status(404).send(err) }
-            if(err=="Save reservation methode problem"){ res.status(400).send(err) }
-        })
+        if(new Date(req.body.dateEntre)>new Date(req.body.dateSortie)||new Date(req.body.dateEntre)<new Date()){
+            res.status(400).send('Corrigez vos dates !')
+        }else{
+            let myReservation= new colReservation({
+                dateEntre:new Date(req.body.dateEntre),
+                dateSortie:new Date(req.body.dateSortie),
+                idClient:req.body.idClient,
+                idHotel:req.body.idHotel,
+                typeRoom:req.body.typeRoom
+            });
+            processReservation.processAddOneReservation(myReservation,req.body.idClient,req.body.idHotel)
+            .then((result)=>{
+                res.status(200).send(result)
+            })
+            .catch((err)=>{
+                if(err=="Find reservations methode problem"){ res.status(400).send(err) }
+                if(err=="Not found hotel"){ res.status(404).send(err) }
+                if(err=="FindOne hotel methode problem"){ res.status(400).send(err) }
+                if(err=="Not found user"){ res.status(404).send(err) }
+                if(err=="Find one user methode problem"){ res.status(400).send(err) }
+                if(err=="FindOne user methode problem"){ res.status(404).send(err) }
+                if(err=="Save reservation methode problem"){ res.status(400).send(err) }
+            })
+        }
     },  
 
     actionUpdateOneReservation:(req,res)=>{
