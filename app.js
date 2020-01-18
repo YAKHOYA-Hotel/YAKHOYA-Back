@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const port = 3030;
+// const port = 3030; 
+let port = process.env.PORT || 3030
 //Déclarer les routes______________________
 const routesHotel= require("./src/compoHotel/routesHotel")
 const routesRoom= require("./src/compoRoom/routesRoom")
