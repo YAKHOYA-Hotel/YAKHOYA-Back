@@ -5,13 +5,14 @@ module.exports = {
 
     actionShowAllReservationsUser:(req,res)=>{
         username=req.params.username
+        console.log(username)
         processUser.processShowAllReservationsUser(username)
         .then((tabReservation)=>{
-            console.log(tabReservation)
+            // console.log(tabReservation)
             res.status(200).send(tabReservation)
         })
         .catch((error)=>{
-            console.log(error)
+            res.status(400).send(error)
         })
     },
     
