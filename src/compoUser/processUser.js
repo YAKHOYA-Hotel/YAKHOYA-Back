@@ -1,4 +1,7 @@
-//----Import
+// ********************************************************************************************
+// Dans ce module on : traite la demande, accède à la base en lecture écriture
+// ********************************************************************************************
+
 const mongoose = require('mongoose');
 ObjectId = mongoose.Types.ObjectId;
 const bcrypt = require('bcryptjs');
@@ -6,7 +9,6 @@ const jwtutils = require('./jwt.utils');
 const modelsUser = require('./modelsUser');
 const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const PASSWORD_REGEX = /^(?=.*\d).{4,8}$/;
-const utilsUsers= require('./utilsUsers')
 //----Routera
 module.exports = {
 

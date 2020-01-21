@@ -1,3 +1,8 @@
+// ********************************************************************************************
+// Dans ce module on : décomposer la requête reçut du front et on fait appel à notre processus 
+// L'intelligence de notre API Rest 
+// ********************************************************************************************
+
 const colReservation  = require('./modelsReservation');
 const processReservation = require('./processReservation');
 

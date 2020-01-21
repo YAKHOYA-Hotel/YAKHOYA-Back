@@ -1,4 +1,6 @@
-const colReservation = require('../compoReservation/modelsReservation')
+// ********************************************************************************************
+// Module util pour les users
+// ********************************************************************************************
 
 module.exports={
     

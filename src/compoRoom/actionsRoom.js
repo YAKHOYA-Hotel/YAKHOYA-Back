@@ -1,5 +1,9 @@
+// ********************************************************************************************
+// Dans ce module on : décomposer la requête reçut du front et on fait appel à notre processus 
+// L'intelligence de notre API Rest 
+// ********************************************************************************************
+
 const colRoom  = require('./modelsRoom');
-const colReservation= require('../compoReservation/modelsReservation')
 const processRoom = require('./processRoom');
 
 module.exports={

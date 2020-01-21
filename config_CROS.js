@@ -1,13 +1,6 @@
-// module.exports={
-    
-//     activateCors:(req, res, next)=> {
-//         res.header("Access-Control-Allow-Origin", "*");
-//         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//         res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-//         next();
-       
-//     }
-// }
+// ********************************************************************************************
+// Configurer CORS afin d'autoriser l'appelle à nos services Back
+// ********************************************************************************************
 
 module.exports={
     
@@ -22,10 +15,7 @@ module.exports={
 		res.setHeader("Access-Control-Allow-Headers", "content-type");
         res.setHeader("Access-Control-Allow-Methods","PUT, POST, GET, DELETE, PATCH, OPTIONS");
         res.setHeader("Access-Control-Allow-Headers", "*");
-      
-        //res.Header("Access-Control-Allow-Origin","http://localhost:3030/user/login");
         
         next();
-       
     }
 }

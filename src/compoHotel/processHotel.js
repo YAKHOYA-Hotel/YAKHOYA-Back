@@ -1,3 +1,7 @@
+// ********************************************************************************************
+// Dans ce module on : traite la demande, accède à la base en lecture écriture
+// ********************************************************************************************
+
 const colHotel = require('./modelsHotel');
 const ObjectId = require('mongodb').ObjectID
 

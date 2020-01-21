@@ -1,11 +1,13 @@
+// ********************************************************************************************
+// Module util pour les reservations
+// ********************************************************************************************
+
 const colReservation = require('./modelsReservation');
 const colRoom= require('../compoRoom/modelsRoom')
 const colHotel= require('../compoHotel/modelsHotel')
 const processRoom = require('../compoRoom/processRoom');
-const ObjectId = require('mongodb').ObjectID
 const modelsUser = require('../compoUser/modelsUser');
 const processUser = require('../compoUser/processUser');
-const procesReservation= require('./processReservation')
 
 
 module.exports={
